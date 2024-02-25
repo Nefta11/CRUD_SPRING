@@ -28,19 +28,21 @@ public class StudentController {
     }
 
     
-    @GetMapping("/{studentId}")
+    @GetMapping("GetOne/{studentId}")
     public Optional<Student> getBId(@PathVariable("studentId")Long studentId){
         return studentService.getStudent(studentId);
     }
 
     @PostMapping
-    public void saveUpdate(@RequestBody Student student){
+    public Student saveUpdate(@RequestBody Student student){
         studentService.saveOrUpdate(student);
+        return student;
     }
 
-    @DeleteMapping("/{studentID}")
-    public void saveUpdate(@PathVariable ("studentId")Long studentId){
-        studentService.delete(studentId);
+    @DeleteMapping("delete/{studentId}")
+    public String deleteStudent(@PathVariable ("studentId")Long studentId){
+        studentService.deleteStudent(studentId);
+        return "Eliminado exitosamente";
     }
 
 
