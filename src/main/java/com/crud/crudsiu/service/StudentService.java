@@ -1,4 +1,4 @@
-package com.crud.crudsiu.repository.service;
+package com.crud.crudsiu.service;
 
 import java.util.List;
 import java.util.Optional;
