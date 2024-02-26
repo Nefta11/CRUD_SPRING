@@ -44,9 +44,4 @@ public class StudentController {
         studentService.deleteStudent(studentId);
         return "Eliminado exitosamente";
     }
-
-
-    
-
-
 }
