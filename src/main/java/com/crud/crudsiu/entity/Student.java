@@ -16,8 +16,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long studentId; 
-    private String firstName;
-    private String lastName;
+    private String Name;
     @Column(name = "email_addres", unique = true, nullable = false)
     private String email;
 }

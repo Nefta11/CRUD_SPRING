@@ -12,9 +12,13 @@ import com.crud.crudsiu.repository.StudentRepository;
 @Service
 public class StudentService {
     @Autowired
-    StudentRepository studentRepository;
+    private StudentRepository studentRepository;
     
-    public List<Student> getStudents(){
+    public Student saveStudent(Student student){
+        return studentRepository.save(student);
+    }
+
+    public List<Student> getAllStudents(){
         return studentRepository.findAll();
     }
 
@@ -22,10 +26,11 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
-    public void saveOrUpdate(Student student){
-
-        studentRepository.save(student);
+    public Student updateStutend(Long id,Student student){
+    student.setStudentId(id);
+    return studentRepository.save(student);
     }
+
     public void  deleteStudent(Long id){
         studentRepository.deleteById(id);;
     }
