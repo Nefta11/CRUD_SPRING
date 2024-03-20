@@ -28,20 +28,24 @@ public class StudentController {
         return studentService.saveStudent(student);
     }
 
+
     @GetMapping
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
+
 
     @GetMapping("/{studentId}")
     public Optional<Student> getBId(@PathVariable("studentId") Long studentId) {
         return studentService.getStudent(studentId);
     }
 
+
     @PutMapping("/{studentId}")
     public Student updateStutend(@PathVariable Long studentId,@RequestBody Student student ){
         return studentService.updateStutend(studentId,student);
     }
+    
     
     @DeleteMapping("/{studentId}")
     public String deleteStudent(@PathVariable("studentId") Long studentId) {
